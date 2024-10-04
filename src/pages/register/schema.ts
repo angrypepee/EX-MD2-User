@@ -1,21 +1,12 @@
-import { object, string } from "yup";
 
-const Schema = object ({
-    firstName: string()
-        .min(3,"First Name must be 3 characters" )
-        .max(20, "First name cannot be more than 10 Characters")
-        .required(),
-    lastName: string()
-        .min(3,"First Name must be 3 characters" )
-        .max(20, "First name cannot be more than 10 Characters")
-        .required(),
-    email: string().email("Invalid format").required("Required"),
-    password: string()
-        .min (3, "Password must be 3 character")
-        .matches(
-            /^(?=.*[\d])(?=.*[!@#$%^&*])[\w!@#$%^&*]{6,16}$/,
-            "Password need to have 1 number and special character ")
-        .required("Required"),
+import * as Yup from "yup";
+
+const Schema = Yup.object().shape({
+    firstName: Yup.string().required("First Name is required"),
+    lastName: Yup.string().required("Please provide your Last Name"),
+    email: Yup.string().email("Please enter a valid email address").required("Email is required"),
+    password: Yup.string().min(8, "Password must be at least 8 characters").required("Password is required"),
 });
+
 
 export default Schema;
