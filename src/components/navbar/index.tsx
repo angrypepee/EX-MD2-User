@@ -1,20 +1,21 @@
 import { Link, useLocation } from 'react-router-dom';
-
+import Logo from '../logo/logo.png'
 function Navbar() {
     const location = useLocation();
 
     return (
-        <header className='bg-red-500 p-4 rounded-sm'>
+        <header className='bg-green-600 p-2 rounded-lg'>
+
             <nav className="flex items-center justify-between">
                 <div className="flex items-center">
                     <Link to="/register">
                         <img
-                            src="./assets/img/kermit-the-frog.png" 
+                            src={Logo}
                             alt="Logo"
                             className="w-12 h-12 mr-2"
                         />
                     </Link>
-                    <span className="text-white font-bold text-xl">Angry Pepe Ltd. </span> {/* Text logo (optional) */}
+                    <span className="text-white font-bold text-xl">Kermit </span> {/* Text logo (optional) */}
                 </div>
 
                 {/* Right side - Navigation links */}
@@ -29,7 +30,7 @@ function Navbar() {
                         to="/users" 
                         className={`text-white font-semibold hover:underline ${location.pathname === '/users' ? 'underline' : ''}`}
                     >
-                        Users
+                        Members
                     </Link>
                 </div>
             </nav>
