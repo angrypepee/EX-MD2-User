@@ -4,4 +4,5 @@ export default interface IUser {
     lastName: string;
     email: string;
     password: string;
+    isRegistered: boolean;
 }

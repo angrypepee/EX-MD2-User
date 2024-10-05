@@ -59,6 +59,7 @@ const Register = () => {
                                     lastName: "",
                                     email: "",
                                     password: "",
+                                    isRegistered: false,
                                 }}
                                 validationSchema={Schema}
                                 onSubmit={async (values, { setSubmitting, resetForm }) => {
